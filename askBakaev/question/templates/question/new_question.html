@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+
+<div class="up">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <div class="btn btn-secondary">Форма создания вопроса</div>
+  </div>
+</div>
+
+            <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ваш Вопрос </label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Вопрос о жизни, вселенной и всём таком">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Расскажите в подробностях</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+                <label for="exampleFormControlInput1">Введите тэги через запятую </label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Любовь, смерть, роботы">
+                </div>
+            </form>
+
+{% endblock %}

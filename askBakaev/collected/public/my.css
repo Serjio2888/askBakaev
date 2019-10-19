@@ -1,0 +1,106 @@
+.up {
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.main-content {
+    border-style: outset;
+    padding: 3px;
+    border-width: 5px;
+    color: darkcyan;
+}
+
+.right-content {
+    border-style: outset;
+    padding: 8px;
+    border-width: 5px;
+    
+    color: darkcyan;  
+}
+
+.question {
+    border-style: outset;
+    padding: 5px;
+    color: rgba(21, 56, 56, 0.507);
+}
+
+.answer {
+  border-style: inherit;
+  padding: 3px;
+  color: rgba(21, 56, 56, 0.507);
+}
+
+.row {
+    padding: 5px;
+}
+
+.avatar {
+    margin-left: 0px;
+    margin-top: 8px;
+    border-radius: 15px;
+}
+
+.small-avatar {
+    border-radius: 5px;
+}
+
+.column {
+    float: left; 
+}
+ 
+.padding-left-5 {
+    padding-left: 5px;
+}
+.right-quest {
+    float: right; 
+}
+
+.left{  
+  width: 69%;  
+}
+
+.just-border{  
+    width: 3%;  
+  }
+.right{  
+    width: 22%;  
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 20px;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: darkcyan;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  .tagging {
+    display: inline-block;
+    padding-left: 20px;
+  }
+  
+  .tagging a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
