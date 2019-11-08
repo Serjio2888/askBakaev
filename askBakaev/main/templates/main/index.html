@@ -5,11 +5,15 @@
 <div class="up">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-secondary">Создать Новый Вопрос</button>
-      <button type="button" class="btn btn-secondary">Крутые вопросы</button>
+      <button type="button" class="btn btn-secondary">Мощные вопросы</button>
     </div>
   </div>
 
   <div class="container main-content">
+
+      {% for quest in questions %}
+      {%if quest.published %}
+
     <div class="row">
       <div class="col-10">
         <div class="question">
@@ -18,71 +22,47 @@
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
             </div>
             <div class="col-10">
-              <h2><a href="/question">My best question</a></h2>
-              <p>Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.</p>
+              <h2><a href="/question/{{quest.pk}}">{{ quest.question }} </a></h2>
+              <p>
+                  
+                <a>{{ quest.description }}</a>
+
+              </p>
               <p><div class="pagination">
-                  <a href="#">beautiful</a>
-                  <a href="#">cool</a>
-                  <a href="#">amazing</a>
-                  <a href="#">lovely</a>
+                
+                {% for tag in quest.tags.all %}
+                  <a href='#'>{{ tag.tag }}</a>
+                {% endfor %}
+                {% for x in quest.answers %}
+                    {{x.answer}}
+                {% endfor %}
                 </div></p>
+                <p>{{ quest.creation_time }}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="col-2 ">
+          <button type="button" href="/" class="btn btn-outline-primary">
+              {{ quest.author }}
+          </button>
+          <br /> <br />
           <button type="button" class="btn btn-outline-primary">
-              Ответы <span class="badge badge-light">4</span>
+              Ответы <span class="badge badge-light">{{quest.answers_set.count}}</span>
           </button>
           <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-success"><strong> + </strong></button>
               <button type="button" class="btn btn-danger"><strong> - </strong></button>
             </div>
           <button type="button" class="btn btn-outline-danger">
-              Рейтинг <span class="badge badge-light">-5</span>
+              Рейтинг <span class="badge badge-light">{{ quest.rating }}</span>
           </button>
       </div>
     </div>
 
-    <div class="row">
-        <div class="col-10">
-          <div class="question">
-            <div class="row">
-              <div class="col-2">
-                <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
-              </div>
-              <div class="col-10">
-                <h2><a href="">My best question</a></h2>
-                <p>Few words about what should i ask about.
-                Few words about what should i ask about.
-                Few words about what should i ask about.
-                Few words about what should i ask about.
-                Few words about what should i ask about.</p>
-                <p><div class="pagination">
-                    <a href="#">beautiful</a>
-                    <a href="#">cool</a>
-                    <a href="#">amazing</a>
-                  </div></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-2 ">
-            <button type="button" class="btn btn-outline-primary">
-                Ответы <span class="badge badge-light">4</span>
-            </button>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-success"><strong> + </strong></button>
-                <button type="button" class="btn btn-danger"><strong> - </strong></button>
-              </div>
-            <button type="button" class="btn btn-outline-danger">
-                Рейтинг <span class="badge badge-light">-5</span>
-            </button>
-        </div>
-      </div>
+    {% endif %}
+    {% endfor %}
+
 
   </div>
 {% endblock %}

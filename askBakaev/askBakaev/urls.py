@@ -23,10 +23,11 @@ from question import views as quest_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_views.index, name='index'),
-    path('question/', quest_views.question, name='question'),
+    # path('question/', quest_views.question, name='question'),
     path('new/', quest_views.new_question, name='new'),
     path('tags/', main_views.tags, name='tags'),
     path('settings/', main_views.settings, name='settings'),
     path('reg/', author_views.reg, name='reg'),
     path('login/', author_views.login, name='login'),
+    path('question/<int:pk>/', quest_views.QuestView.as_view()),
 ]

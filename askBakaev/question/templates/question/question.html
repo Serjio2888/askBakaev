@@ -5,10 +5,10 @@
 <div class="up">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button class="btn btn-secondary">asked by</button>
-      <button type="button" class="btn btn-secondary">ProfileName</button>
+      <button type="button" class="btn btn-secondary">{{object.author}}</button>
     </div>
   </div>
-
+                                           {{increment}}
   <div class="container main-content">
     <div class="row">
       <div class="col-10">
@@ -18,16 +18,12 @@
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
             </div>
             <div class="col-10">
-              <h2><a href="/question">My best question</a></h2>
-              <p>Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.</p>
+              <h2><a href=" ">{{object.question}}</a></h2>
+              <p>{{object.description}}</p>
               <p><div class="pagination">
-                  <a href="#">beautiful</a>
-                  <a href="#">cool</a>
-                  <a href="#">amazing</a>
-                  <a href="#">lovely</a>
+                 {% for tag in object.tags.all %}
+                  <a href="#">{{tag}}</a>
+                {% endfor %}
                 </div></p>
             </div>
           </div>
@@ -35,18 +31,22 @@
       </div>
       <div class="col-2 ">
           <button type="button" class="btn btn-outline-primary">
-              Ответы <span class="badge badge-light">3</span>
+              Ответы <span class="badge badge-light">{{object.answers_set.count}}</span>
           </button>
           <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-success"><strong> + </strong></button>
               <button type="button" class="btn btn-danger"><strong> - </strong></button>
             </div>
           <button type="button" class="btn btn-outline-danger">
-              Рейтинг <span class="badge badge-light">-5</span>
+              Рейтинг <span class="badge badge-light">{{object.rating}}</span>
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+              Просмотры <span class="badge badge-light">{{object.views}}</span>
           </button>
       </div>
     </div>
 
+{% for answer in object.answers_set.all %} <!--how does it works????-->
   <div class="row">
       <div class="col-10">
         <div class="answer">
@@ -55,51 +55,15 @@
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
             </div>
             <div class="col-10">
-              <h3><a href="">answererName</a></h3>
-              <p>Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.</p>
+              <h3><a href="">{{answer.author}}</a></h3>
+              <p>{{answer.answer}}</p>
+              <p>{{answer.creation_time}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  <div class="row">
-      <div class="col-10">
-        <div class="answer">
-          <div class="row">
-            <div class="col-2">
-              <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
-            </div>
-            <div class="col-10">
-              <h3><a href="">answererName</a></h3>
-              <p>Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <div class="row">
-      <div class="col-10">
-        <div class="answer">
-          <div class="row">
-            <div class="col-2">
-              <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
-            </div>
-            <div class="col-10">
-              <h3><a href="">answererName</a></h3>
-              <p>Few words about what should i ask about.
-              Few words about what should i ask about.
-              Few words about what should i ask about.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+{% endfor %}
   </div>
 {% endblock %}
