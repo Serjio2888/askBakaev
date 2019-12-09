@@ -17,7 +17,9 @@
             <div class="col-2">
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
             </div>
-            <div class="col-10">
+            <div class="col-1"></div>
+            <div class="col-9">
+                
               <h2><a href=" ">{{object.question}}</a></h2>
               <p>{{object.description}}</p>
               <p><div class="pagination">
@@ -52,9 +54,13 @@
         <div class="answer">
           <div class="row">
             <div class="col-2">
+
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
+
             </div>
-            <div class="col-10">
+            <div class="col-1"></div>
+            <div class="col-9">
+              
               <h3><a href="">{{answer.author}}</a></h3>
               <p>{{answer.answer}}</p>
               <p>{{answer.creation_time}}</p>

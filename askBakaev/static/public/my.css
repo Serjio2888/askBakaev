@@ -35,9 +35,19 @@
 }
 
 .avatar {
-    margin-left: 0px;
+    margin-left: 18px;
     margin-top: 8px;
     border-radius: 15px;
+    margin-right: 8px;
+}
+
+.margine {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.marginal {
+  margin-bottom: 5px;
 }
 
 .small-avatar {

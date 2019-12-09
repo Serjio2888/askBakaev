@@ -20,13 +20,17 @@
           <div class="row">
             <div class="col-2">
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
+              <div class="margine">
+              <button type="button" href="/" class="btn btn-outline-primary">
+                {{ quest.author }}
+            </button>
+              </div>
             </div>
-            <div class="col-10">
+            <div class="col-1"></div>
+            <div class="col-9">
               <h2><a href="/question/{{quest.pk}}">{{ quest.question }} </a></h2>
               <p>
-                  
                 <a>{{ quest.description }}</a>
-
               </p>
               <p><div class="pagination">
                 
@@ -43,20 +47,23 @@
         </div>
       </div>
       <div class="col-2 ">
-          <button type="button" href="/" class="btn btn-outline-primary">
-              {{ quest.author }}
-          </button>
-          <br /> <br />
+          <br />
+          <div class="marginal">
           <button type="button" class="btn btn-outline-primary">
               Ответы <span class="badge badge-light">{{quest.answers_set.count}}</span>
           </button>
+        </div>
+        <div class="marginal">
           <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-success"><strong> + </strong></button>
               <button type="button" class="btn btn-danger"><strong> - </strong></button>
             </div>
+          </div>
+            <div class="marginal">
           <button type="button" class="btn btn-outline-danger">
               Рейтинг <span class="badge badge-light">{{ quest.rating }}</span>
           </button>
+        </div>
       </div>
     </div>
 

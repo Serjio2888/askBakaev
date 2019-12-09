@@ -15,8 +15,8 @@ class Users(models.Model):
 
 class QuestManager(models.Manager):
     def increment(self, question):
-        ##
-        return ""
+        print("increment is called")
+        # return 
 
 class Questions(models.Model):
     question = models.CharField(max_length=200, verbose_name = "вопрос")

@@ -26,7 +26,7 @@ class QuestView(DetailView):
                 q = Questions.objects.get(pk=context['questions'].id)
                 q.views += 1
                 q.save()
-        context['increment'] = Questions.objects.increment()
+        context['increment'] = Questions.objects.increment(context['object'])
         #print(context['questions'].__dict__)
         #context['comment_add_url'] = "/topic/{}/add_comment".format(context['topic'].id)
         return context
