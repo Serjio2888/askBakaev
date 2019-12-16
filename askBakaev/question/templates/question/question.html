@@ -8,7 +8,15 @@
       <button type="button" class="btn btn-secondary">{{object.author}}</button>
     </div>
   </div>
-                                           {{increment}}
+                                          
+    {% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li class="{{ message.tags }} btn btn-outline-info ml-2">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
   <div class="container main-content">
     <div class="row">
       <div class="col-10">
@@ -48,6 +56,8 @@
       </div>
     </div>
 
+<form action="post" method="post">
+        {% csrf_token %}
 {% for answer in object.answers_set.all %} <!--how does it works????-->
   <div class="row">
       <div class="col-10">
@@ -63,13 +73,22 @@
               
               <h3><a href="">{{answer.author}}</a></h3>
               <p>{{answer.answer}}</p>
+
+                <input type="checkbox" name="choices" value="{{answer.right_answer}}">
+               
               <p>{{answer.creation_time}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    {% endfor %}
+      <button type="submit" name="right" class="btn btn-success margine">right answer</button>
 
-{% endfor %}
+  </form>
+  
   </div>
+  <a href="/new_answer/{{object.id}}" class="margine btn btn-outline-info ml-2 margin">Add Answer</a>
+
+  {{increment}}
 {% endblock %}

@@ -12,7 +12,7 @@
             <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Ваш Вопрос </label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Вопрос о жизни, вселенной и всём таком">
+            <input type="question" class="form-control" id="exampleFormControlInput1" placeholder="Вопрос о жизни, вселенной и всём таком">
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Расскажите в подробностях</label>
@@ -20,8 +20,20 @@
         </div>
         <div class="form-group">
                 <label for="exampleFormControlInput1">Введите тэги через запятую </label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Любовь, смерть, роботы">
+                <input type="tags" class="form-control" id="exampleFormControlInput1" placeholder="Любовь, смерть, роботы">
                 </div>
             </form>
+
+          <form action="" method="POST" enctype="">
+              {% for pole in form %}
+              <div>
+              {{ pole.label_tag }}
+              <p>{{ pole }}</p>
+              </div>
+              <br />
+              {% endfor %}
+              {% csrf_token %}
+              <input type="submit" value="Submit">
+              </form>
 
 {% endblock %}

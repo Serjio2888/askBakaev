@@ -4,15 +4,24 @@
 
 <div class="up">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">Создать Новый Вопрос</button>
-      <button type="button" class="btn btn-secondary">Мощные вопросы</button>
+      <button type="button" class="btn btn-secondary"><a style="color:rgb(248, 248, 247)" 
+        href="/new">Создать Новый Вопрос</a></button>
+      <button type="button" href="/" class="btn btn-secondary">Мощные вопросы</button>
     </div>
   </div>
+
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li class="{{ message.tags }} btn btn-outline-info ml-2">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
 
   <div class="container main-content">
 
       {% for quest in questions %}
-      {%if quest.published %}
+      <!--{%if quest.published %}-->
 
     <div class="row">
       <div class="col-10">
@@ -40,6 +49,7 @@
                 {% for x in quest.answers %}
                     {{x.answer}}
                 {% endfor %}
+                
                 </div></p>
                 <p>{{ quest.creation_time }}</p>
             </div>
@@ -64,10 +74,13 @@
               Рейтинг <span class="badge badge-light">{{ quest.rating }}</span>
           </button>
         </div>
+        <button type="button" class="btn btn-outline-primary">
+            Просмотры <span class="badge badge-light">{{quest.views}}</span>
+        </button>
       </div>
     </div>
 
-    {% endif %}
+   <!-- {% endif %}-->
     {% endfor %}
 
 

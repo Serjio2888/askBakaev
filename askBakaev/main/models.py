@@ -5,6 +5,7 @@ class Users(models.Model):
     birthday = models.DateField(verbose_name='дата рождения')
     about = models.TextField(default="Пользователь не рассказал о себе.", verbose_name="о пользователе")
     avatar = models.ImageField(upload_to='upload/')
+    password = models.CharField(default="qwertyqwerty", max_length=32, verbose_name="parol'")
 
     def __str__(self):
         return self.name
@@ -28,7 +29,7 @@ class Questions(models.Model):
     views = models.IntegerField(default=0, verbose_name = "просмотры")
     creation_time = models.DateTimeField(auto_now_add=True, verbose_name='дата и время создания')
     published = models.BooleanField(default=True, verbose_name="опубликован?")
-    tags = models.ManyToManyField('Tags', blank=True, related_name='questions', verbose_name='Теги')
+    tags = models.ManyToManyField('Tags', blank=True, related_name='tags', verbose_name='Теги')
 
     def __str__(self):
         return self.question
@@ -46,6 +47,7 @@ class Answers(models.Model):
     author = models.ForeignKey(
         Users, on_delete=models.CASCADE, related_name='answers', verbose_name = "автор")
     creation_time = models.DateTimeField(auto_now_add=True, verbose_name='дата и время создания')
+    right_answer = models.BooleanField(default="wrong", verbose_name="верный ответ")
 
     def __str__(self):
         return "{} -> {}".format(self.answer, self.question)
@@ -59,6 +61,7 @@ class Tags(models.Model):
     author = models.ForeignKey(
         Users, on_delete=models.CASCADE, verbose_name = "добавил тег")
     questions_count = models.IntegerField(default=0, verbose_name = "вопросы")
+    questions = models.ManyToManyField('Questions', blank=True, related_name='quest', verbose_name='Voprosi')
 
     def __str__(self):
         return self.tag

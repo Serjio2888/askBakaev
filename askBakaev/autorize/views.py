@@ -1,9 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+from django.contrib import messages
+from question import forms
 
-def reg(request):
-    return render(request, "author/reg.html", {})
+from main import models
     
 def login(request):
-    return render(request, "author/authorize.html", {})
+    # print(request.__dict__)
+    if request.method == "POST":
+        # print(request._post.get('password'))
+        messages.success(request, 'Thx for coming back, bro!')
+        return redirect("index")
+    return render(request, "author/authorize.html", {'form':forms.LoginForm()})
+
+def reg(request):
+    print(request)
+    # print(request.__dict__)
+    if request.method == "POST":
+        # print(request._post.get('password'))
+        messages.success(request, 'Thx for registration here, bro!')
+        return redirect("index")
+    return render(request, "author/reg.html", {'form':forms.RegForm()})

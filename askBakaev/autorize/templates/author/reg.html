@@ -9,7 +9,6 @@
   </div>
 </div>
 
-            <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Логин</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" 
@@ -36,6 +35,20 @@
                 <label class="custom-file-label" for="customFile">Choose file</label>
         </div><br /><p></p>
         <button type="button" class="btn btn-outline-success">Зарегать!</button>
+
+
+
+        <form action="" method="POST" >
+                        {% for pole in form %}
+                        <div>
+                        {{ pole.label_tag }}
+                        <p>{{ pole }}</p>
+                        </div>
+                        <br />
+                        {% endfor %}
+                        {% csrf_token %}
+                        <input type="submit" value="Submit">
+                 </form>
 
 
 
