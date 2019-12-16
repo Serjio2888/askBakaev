@@ -47,7 +47,7 @@ class Answers(models.Model):
     author = models.ForeignKey(
         Users, on_delete=models.CASCADE, related_name='answers', verbose_name = "автор")
     creation_time = models.DateTimeField(auto_now_add=True, verbose_name='дата и время создания')
-    right_answer = models.BooleanField(default="wrong", verbose_name="верный ответ")
+    right_answer = models.BooleanField(default=False, verbose_name="верный ответ")
 
     def __str__(self):
         return "{} -> {}".format(self.answer, self.question)
@@ -61,7 +61,7 @@ class Tags(models.Model):
     author = models.ForeignKey(
         Users, on_delete=models.CASCADE, verbose_name = "добавил тег")
     questions_count = models.IntegerField(default=0, verbose_name = "вопросы")
-    questions = models.ManyToManyField('Questions', blank=True, related_name='quest', verbose_name='Voprosi')
+    # questions = models.ManyToManyField('Questions', blank=True, related_name='quest', verbose_name='Voprosi')
 
     def __str__(self):
         return self.tag

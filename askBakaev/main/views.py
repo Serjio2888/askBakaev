@@ -20,7 +20,7 @@ def search_quest(request, query):
     in_quest = models.Questions.objects.filter(question__contains=query)
     result = set(in_desc | in_quest)
     if len(result) == 0:
-        questions = models.Questions.objects.filter(published=True)
+        questions = models.Questions.objects.filter(published=True)[:10]
         messages.error(request, 'So sorry, bro. No such questions :(')
         return redirect("index")
     else:
@@ -29,24 +29,24 @@ def search_quest(request, query):
 def tag_view(request, tag):
     tag_set = models.Tags.objects.filter(tag=tag)
     if len(tag_set) == 0:
-        questions = models.Questions.objects.filter(published=True)
+        questions = models.Questions.objects.filter(published=True)[:10]
         messages.error(request, 'No such tag, bro :(')
         return redirect("index")
     else:
         tag_id = tag_set[0].id
-        questions = models.Questions.objects.filter(published=True, tags=tag_id)
+        questions = models.Questions.objects.filter(published=True, tags=tag_id)[:10]
         return main_page(request, questions) 
 
 def newest(request, year=0):
-    questions = models.Questions.objects.filter(published=True).order_by("-creation_time")
+    questions = models.Questions.objects.filter(published=True).order_by("-creation_time")[:10]
     return main_page(request, questions)
 
 def popular(request, year=0):
-    questions = models.Questions.objects.filter(published=True).order_by("-views")
+    questions = models.Questions.objects.filter(published=True).order_by("-views")[:10]
     return main_page(request, questions)
 
 def index(request, year=0):
-    questions = models.Questions.objects.filter(published=True)
+    questions = models.Questions.objects.filter(published=True)[:10]
     return main_page(request, questions)
 
 def tags(request):

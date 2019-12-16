@@ -5,8 +5,8 @@
 <div class="up">
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-secondary"><a style="color:rgb(248, 248, 247)" 
-        href="/new">Создать Новый Вопрос</a></button>
-      <button type="button" href="/" class="btn btn-secondary">Мощные вопросы</button>
+        href="{% url 'new' %}">Создать Новый Вопрос</a></button>
+      <button type="button" href="{% url 'index' %}" class="btn btn-secondary">Мощные вопросы</button>
     </div>
   </div>
 
@@ -30,14 +30,15 @@
             <div class="col-2">
               <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">
               <div class="margine">
-              <button type="button" href="/" class="btn btn-outline-primary">
+                
+              <button type="button" href="{% url 'index' %}" class="btn btn-outline-primary">
                 {{ quest.author }}
             </button>
               </div>
             </div>
             <div class="col-1"></div>
             <div class="col-9">
-              <h2><a href="/question/{{quest.pk}}">{{ quest.question }} </a></h2>
+              <h2><a href="{% url 'question' pk=quest.pk %}">{{ quest.question }} </a></h2> <!--/question/{{quest.pk}}-->
               <p>
                 <a>{{ quest.description }}</a>
               </p>
