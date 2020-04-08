@@ -164,6 +164,15 @@ p {
     opacity: .95;
 }
 
+.jumbotronMy42 {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, #eeeeee, #eeeeee);
+    border-radius: 0.5%;
+    /*margin-top: 20px;*/
+    opacity: .99;
+}
+
 .jumbotronHead {
     padding: 0.2% 1%;
     margin-bottom: 2rem;
@@ -207,6 +216,12 @@ p {
 
 .urists2 {
     margin: 50px 7% 0px 7%; /* отступаем сверху 50px и выравниваем по центру */
+    /* width: 100%; */
+}
+
+.urists42 {
+    /*margin: 10em 0; !* отступаем сверху 50px и выравниваем по центру *!*/
+    margin-top: 20px;
     /* width: 100%; */
 }
 
