@@ -13,47 +13,63 @@
         <link href="{% static "carousel.css" %}" rel="stylesheet">
         <title>AskBakaev</title>
       </head>
-   <body class="rofl">
-<!--    <body style="background-image: url("https://usatunofficial.files.wordpress.com/2015/10/colorado-supreme-court.jpg");">-->
-
 
 <header>
-<!--<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">-->
-<!--  <a class="navbar-brand" href="{% url 'index' %}">AskBakaev</a>-->
-<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--    <span class="navbar-toggler-icon"></span>-->
-<!--  </button>-->
-<!--  <div class="collapse navbar-collapse" id="navbarCollapse">-->
-<!--    <ul class="navbar-nav mr-auto">-->
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="{% url 'reg' %}">Регистрация</a>-->
-<!--          </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" href="{% url 'settings' %}">Настройки</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" href="{% url 'popular' %}">Популярное</a>-->
-<!--      </li>-->
-<!--      <li class="nav-item">-->
-<!--        <a class="nav-link" href="{% url 'newest' %}">Последние</a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--    <form class="form-inline mt-4 mt-md-0">-->
-<!--      <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Поиск">-->
-<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>-->
-<!--    </form>-->
-<!--    <form class="form-inline mt-4  mt-md-0">-->
-<!--        <img type="button" class="ml-4 small-avatar" src="{% static "public/kitten.jpg" %}" width="44" height="40" alt="kitten">-->
-<!--        <button type="button" class="btn btn-outline-info ml-2">ProfileName</button>-->
-<!--        <button type="button" class="btn btn-outline-info ml-2">Выход</button>-->
+<!--    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
+<!--        <a class="navbar-brand" href="#">KK Company</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar row jumbotronHead">
+        <img class="navbar-brand col-1 d-block w-10" src="https://psv4.userapi.com/c856420/u75419560/docs/d15/71db31b82afc/kk_logo_2.png?extra=b3Z7QHz1x05tGPBRPVmgWkBeiEbFJYgCI108Tar4pYcXKCwH0d3tAF-mMHdOvVX26BEMJnhccv2jNDUrht9gn5yrSoNeBY1GxSI_uus8pqSAAfBK5eglL4bQbNaPQZFgrBwTSGM-c4LG5-n8olvdns8" alt="First slide">
+<!--        <a class="navbar-brand col-8" href="#"><strong>Navbar</strong></a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active col">
+                    <a href="{% url 'index' %}"><button type="button" class="btn btn-coffee">Главная</button></a>
+<!--                    <a class="nav-link" href="#">Link</a>-->
+                </li>
+                <li class="nav-item active col">
+                    <a href="{% url 'team' %}"><button type="button" class="btn btn-coffee">Команда</button></a>
+                    <!--                    <a class="nav-link" href="#">Profile</a>-->
+                </li>
+                <li class="nav-item active col">
+                    <a href="{% url 'practica' %}"><button type="button" class="btn btn-coffee">Практика</button></a>
+<!--                    <a class="nav-link" href="#">Link</a>-->
+                </li>
+                <li class="nav-item active col">
+                    <a href="{% url 'otzyvy' %}"><button type="button" class="btn btn-coffee">Отзывы</button></a>
+<!--                    <a class="nav-link" href="#">Profile</a>-->
+                </li>
 
-<!--      </form>-->
-<!--  </div>-->
-<!--</nav>-->
+            </ul>
+        </div>
+    </nav>
 </header>
 
 
-
+<body class="rofl">
 <!--<div class="row">-->
 <!--    <div class="column just-border"></div>-->
 <!--    <div class="column left">-->

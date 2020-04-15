@@ -2,63 +2,11 @@
 {% block content %}
 {% load static %}
 
-<header>
-<!--    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
-<!--        <a class="navbar-brand" href="#">KK Company</a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarCollapse">-->
-<!--            <ul class="navbar-nav mr-auto">-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Практика <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </nav>-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar row jumbotronHead">
-        <img class="navbar-brand col-1 d-block w-10" src="https://psv4.userapi.com/c856420/u75419560/docs/d15/71db31b82afc/kk_logo_2.png?extra=b3Z7QHz1x05tGPBRPVmgWkBeiEbFJYgCI108Tar4pYcXKCwH0d3tAF-mMHdOvVX26BEMJnhccv2jNDUrht9gn5yrSoNeBY1GxSI_uus8pqSAAfBK5eglL4bQbNaPQZFgrBwTSGM-c4LG5-n8olvdns8" alt="First slide">
-<!--        <a class="navbar-brand col-8" href="#"><strong>Navbar</strong></a>-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active col">
-                    <button type="button" class="btn btn-coffee">Главная</button>
-<!--                    <a class="nav-link" href="#">Link</a>-->
-                </li>
-                <li class="nav-item active col">
-                    <button type="button" class="btn btn-coffee">Практика</button>
-<!--                    <a class="nav-link" href="#">Link</a>-->
-                </li>
-                <li class="nav-item active col">
-                    <button type="button" class="btn btn-coffee">Аналитика</button>
-<!--                    <a class="nav-link" href="#">Profile</a>-->
-                </li>
-                <li class="nav-item active col">
-                    <button type="button" class="btn btn-coffee">Команда</button>
-                    <!--                    <a class="nav-link" href="#">Profile</a>-->
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+
 
 <main role="main">
 
     <div class="jumbotronMy2 p-4 p-md-4">
-
 
         <div class="row">
             <div class="col">
@@ -277,6 +225,51 @@
 
 
         <!-- /END THE FEATURETTES -->
+
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Услуги для физических лиц
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-block">
+             <p> - консультации, помощь в составлении документов по гражданско-правовым, трудовым, семейным спорам, а также по защите прав потребителей;
+             </p><p> - консультации по вопросам налога на имущество, помощь в получении налоговых вычетов;
+            </p><p>- признание права собственности на квартиру по решению суда, взыскание неустойки с застройщика, сопровождение сделок с недвижимостью;
+           </p><p>  - защита прав моряков.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Услуги для юридических лиц
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="card-block">
+    <p>- организация переговорного процесса;
+   </p><p> - структурирование, сопровождение заключения и исполнения сделок (поставка, подряд);
+    </p><p>- корпоративное право;
+    </p><p>- представительство в Арбитражном суде;
+    </p><p>- антикоррупционный и санкционный комплаенс;
+   </p><p> - сопровождение арендных отношений;
+   </p><p> - консультирование компаний по вопросам зарубежного законодательства и международного коммерческого арбитража.
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+
+</div>
 
         <hr class="featurette-divider">
 

@@ -36,4 +36,7 @@ urlpatterns = [
     path('question/<int:pk>/', quest_views.QuestView.as_view(), name="question"),
     # path('question/<int:pk>/post', quest_views.question),
     path('new_answer/<int:pk>', quest_views.answer),
+    path('team/', main_views.team, name='team'),
+    path('practice/', main_views.practice, name='practica'),
+    path('reviews/', main_views.reviews, name='otzyvy'),
 ]
