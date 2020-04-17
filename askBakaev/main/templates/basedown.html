@@ -1,0 +1,61 @@
+        {% block content %}
+        {% endblock %}
+
+<!--    </div>-->
+<!--<div class="just-border"></div>-->
+<!--<div class="column right padding-left-5 right-content">-->
+<!--  <div class=""> <p><h2><a href="{% url 'tags-->
+<!--    ' %}">Popular Tags</a></h2> -->
+<!--    <ul>-->
+<!--        <li>Tag1</li>-->
+<!--        <li>Tag2</li>-->
+<!--        <li>Tag3</li>-->
+<!--       </ul>-->
+<!--    <h2><a href="">Popular users</a></h2> </p></div>-->
+<!--    <ul>-->
+<!--        <li><a href="#">Bakaev</a></li>-->
+<!--        <li><a href="#">Fedorov</a></li>-->
+<!--        <li><a href="#">Ivanov</a></li>-->
+<!--       </ul>-->
+<!--</div>-->
+<!--</div> -->
+
+    <footer class="container">
+        <div class="jumbotronMy2" style="color: black">
+            <form>
+                <label for="exampleFormControlInput1">Форма обратной связи</label>
+                <p></p>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ваш Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ваш Номер (не обязательно)</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Какие услуги Вас интересуют?</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Для физических лиц</option>
+                        <option>Для юридических лиц</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Кратко опишите проблему</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+            <button type="button" class="btn btn-coffee">Оставить заявку</button>
+        </div>
+
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p style="color: whitesmoke">&copy; 2020 KK Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static "node_modules/jquery/jquery.min.js" %}" ></script>
+    <script src="{% static "node_modules/popper.js/dist/popper.min.js" %}"></script>
+    <script src="{% static "node_modules/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>

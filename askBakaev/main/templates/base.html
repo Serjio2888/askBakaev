@@ -38,8 +38,7 @@
 <!--        </div>-->
 <!--    </nav>-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar row jumbotronHead">
-        <img class="navbar-brand col-1 d-block w-10" src="https://psv4.userapi.com/c856420/u75419560/docs/d15/71db31b82afc/kk_logo_2.png?extra=b3Z7QHz1x05tGPBRPVmgWkBeiEbFJYgCI108Tar4pYcXKCwH0d3tAF-mMHdOvVX26BEMJnhccv2jNDUrht9gn5yrSoNeBY1GxSI_uus8pqSAAfBK5eglL4bQbNaPQZFgrBwTSGM-c4LG5-n8olvdns8" alt="First slide">
-<!--        <a class="navbar-brand col-8" href="#"><strong>Navbar</strong></a>-->
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,7 +66,20 @@
         </div>
     </nav>
 </header>
+    <div class="jumbotronMy2 p-4 p-md-4">
 
+        <div class="row">
+            <div class="col">
+
+            </div>
+        <div class="col-4">
+            <img class="d-block w-100" src="{% static "public/logo1.png" %}" alt="First slide">
+        </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
 
 <body class="rofl">
 <!--<div class="row">-->
@@ -95,8 +107,37 @@
 <!--</div>-->
 <!--</div> -->
 
+    <footer class="container">
+        <div class="jumbotronMy2" style="color: black">
+            <form>
+                <label for="exampleFormControlInput1">Форма обратной связи</label>
+                <p></p>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ваш Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ваш Номер (не обязательно)</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Какие услуги Вас интересуют?</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Для физических лиц</option>
+                        <option>Для юридических лиц</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Кратко опишите проблему</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+            <button type="button" class="btn btn-coffee">Оставить заявку</button>
+        </div>
 
-
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p style="color: whitesmoke">&copy; 2020 KK Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

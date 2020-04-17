@@ -35,10 +35,19 @@
 }
 
 .avatar {
-    margin-left: 0px;
+    margin-left: 18px;
     margin-top: 8px;
     border-radius: 15px;
     margin-right: 8px;
+}
+
+.margine {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.marginal {
+  margin-bottom: 5px;
 }
 
 .small-avatar {
@@ -105,3 +114,270 @@
     background-color: #ddd;
     border-radius: 5px;
   }
+
+  .b {
+
+  }
+
+  b:active {
+        background-color: yellow;
+  }
+
+
+/*body {*/
+/*    background-image: url("https://usatunofficial.files.wordpress.com/2015/10/colorado-supreme-court.jpg");*/
+/*}*/
+.rofl {
+    background: url("https://sun3.43222.userapi.com/CZQmV3MvXwhr2GFhuQe1INGKho-h7LzzJD9lMw/zOkldeWkcwQ.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a {
+    color: #c33;
+    outline: none;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.urists {
+    margin: 50px auto 0px auto; /* отступаем сверху 50px и выравниваем по центру */
+    width: 400px;
+}
+
+.jumbotronMy {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, #eeeeee, #eeeeee);
+    border-radius: 0.5%;
+    opacity: .95;
+}
+
+.jumbotronMy42 {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, #eeeeee, #eeeeee);
+    border-radius: 0.5%;
+    /*margin-top: 20px;*/
+    opacity: .99;
+}
+
+.jumbotronHead {
+    padding: 0.2% 1%;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, #eeeeee, #eeeeee);
+    border-radius: 0.5%;
+    opacity: .95;
+}
+
+.jumbotronCoffee {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, #d1ad88, #d1ad88);
+    border-radius: 0.5%;
+    opacity: .95;
+}
+
+.jumbotronMy2 {
+    padding: 2rem 1rem;
+    margin: 1% 10% 1% 10%;
+    border-radius: 1em;
+    /*background: linear-gradient(to top, #e3b898, #e3b898);*/
+    /*background-image: url("https://m-files.cdnvideo.ru/lpfile/c/7/8/c78fec74c7b1eeb3ca6d3943e1e39538.jpg");*/
+    /*filter: blur(3px);*/
+    background-size: cover;
+}
+
+.jumbotronMy3 {
+    padding: 3% 5%;
+    margin: 1% 1% ;
+    border-radius: 1em;
+    background: linear-gradient(to top, #e3b898, #e3b898);
+}
+
+.jumbotronDown {
+    padding: 2% 2%;
+    margin-bottom: 2rem;
+    /* background-color: #e9ecef; */
+    border-radius: 1em;
+}
+
+
+.urists2 {
+    margin: 50px 7% 0px 7%; /* отступаем сверху 50px и выравниваем по центру */
+    /* width: 100%; */
+}
+
+.urists42 {
+    /*margin: 10em 0; !* отступаем сверху 50px и выравниваем по центру *!*/
+    margin-top: 20px;
+    /* width: 100%; */
+}
+
+
+.bubble { /* Это основной контейнер с закругленными уголками */
+    clear: both;
+    margin: 0px auto;
+    width: 350px;
+    background: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 90; /* будет отображаться под лентой заголовка (класс .rectangle, у него z-index: 100) */
+}
+.rectangle {
+    background: #7f9db9;
+    height: 50px;
+    width: 380px;
+    position: relative;
+    left: -15px;
+    top: 30px;
+    float: left;
+    -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
+    z-index: 100; /* показываем над всеми элементами */
+
+    font-size: 30px;
+    line-height: 40px;
+    color: #fff;
+    padding-top: 6px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.triangle-l { /* уголочек под зголовком слева */
+    border-color: transparent #7d90a3 transparent transparent;
+    border-style:solid;
+    border-width:15px;
+    height: 0px;
+    width: 0px;
+    position: relative;
+    left: -30px;
+    top: 65px;
+    z-index: -1; /* спрячем под основной блок */
+}
+.triangle-r { /* уголочек под зголовком справа */
+    border-color: transparent transparent transparent #7d90a3;
+    border-style:solid;
+    border-width:15px;
+    height: 0px;
+    width: 0px;
+    position: relative;
+    left: 350px;
+    top: 35px;
+    z-index: -1; /* спрячем под основной блок */
+}
+.info {
+    padding: 50px 25px 15px 25px;
+}
+.info h2 {
+    font-size: 20px;
+}
+/* Добавим стили для меню */
+.menu {
+    position: relative;
+    top:7px;
+    left: 50px;
+    z-index: 80; /* Спрячемм под основной блок с закругленными уголками */
+}
+.menu li {
+    -webkit-transform: rotate(-45deg); /* Повернем элемент в вебките */
+    -moz-transform: rotate(-45deg); /* Повернем элемент в Мозилле */
+    transform: rotate(-45deg);
+    width: 50px;
+    overflow: hidden;
+    margin: 10px 0px;
+    padding: 5px 5px 5px 18px;
+    float: left;
+    background: #7f9db9;
+    text-align: right;
+}
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    display:block;
+}
+.menu li.l1 {
+    background: rgba(131, 178, 51, 0.65);
+}
+.menu li.l1:hover {
+    background: rgb(131,178,51);
+}
+.menu li.l2 {
+    background: rgba(196, 89, 30, 0.65);
+}
+.menu li.l2:hover {
+    background: rgb(196,89,30);
+}
+.menu li.l3 {
+    background: rgba(65, 117, 160, 0.65);
+}
+.menu li.l3:hover {
+    background: rgb(65,117,160);
+}
+
+.doptext {
+    text-align: center
+}
+
+
+
+/* buttons */
+
+.btn-coffee {
+    color: #d1ad88;
+    border-color: #d1ad88;
+    margin: 1% 0;
+}
+
+.btn-coffee:hover {
+    color: #fff;
+    background-color: #d1ad88;
+    border-color: #d1ad88;
+}
+
+.btn-coffee:focus, .btn-coffee.focus {
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+}
+
+.btn-coffee.disabled, .btn-coffee:disabled {
+    color: #d1ad88;
+    background-color: transparent;
+}
+
+
+.btn-secondary-coffee {
+    color: #fff;
+    background-color: #d1ad88;
+    border-color: #d1ad88;
+}
+
+.btn-secondary-coffee:hover {
+    color: #fff;
+    background-color: #c36319;
+    border-color: #c36319;
+}
+
+.btn-secondary-coffee:focus, .btn-secondary-coffee.focus {
+    box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+}
+
+.btn-secondary-coffee.disabled, .btn-secondary-coffee:disabled {
+    color: #fff;
+    background-color: #d1ad88;
+    border-color: #d1ad88;
+}

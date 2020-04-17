@@ -128,11 +128,19 @@
 /*    background-image: url("https://usatunofficial.files.wordpress.com/2015/10/colorado-supreme-court.jpg");*/
 /*}*/
 .rofl {
+    margin-top: 5em;
+    margin-bottom: 3em;
     background: url("https://sun3.43222.userapi.com/CZQmV3MvXwhr2GFhuQe1INGKho-h7LzzJD9lMw/zOkldeWkcwQ.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.card-spoiler-kk {
+  height: 40%;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
 }
 
 a {
@@ -154,12 +162,20 @@ p {
     width: 400px;
 }
 
+.centered-texto {
+    margin: auto;
+}
+
+.intervallo {
+    line-height: 150%;
+}
+
 .jumbotronMy {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background: linear-gradient(to top, #eeeeee, #eeeeee);
     border-radius: 0.5%;
-    opacity: .95;
+    /*opacity: .95;*/
 }
 
 .jumbotronMy42 {
@@ -169,6 +185,11 @@ p {
     border-radius: 0.5%;
     /*margin-top: 20px;*/
     opacity: .99;
+}
+
+.centroid {
+    display: block;
+    margin-left: 20%;
 }
 
 .jumbotronHead {
