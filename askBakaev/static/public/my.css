@@ -168,12 +168,14 @@ p {
 
 .intervallo {
     line-height: 150%;
+    text-align: justify;
 }
 
 .jumbotronMy {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background: linear-gradient(to top, #eeeeee, #eeeeee);
+    background-color: #FFFBF3;
+    /*background: linear-gradient(to top, #eeeeee, #eeeeee);*/
     border-radius: 0.5%;
     /*opacity: .95;*/
 }
