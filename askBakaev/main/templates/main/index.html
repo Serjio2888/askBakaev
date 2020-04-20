@@ -2,94 +2,6 @@
 {% block content %}
 {% load static %}
 
-<!--<div class="up">-->
-<!--    <div class="btn-group" role="group" aria-label="Basic example">-->
-<!--      <button type="button" class="btn btn-secondary"><a style="color:rgb(248, 248, 247)"-->
-<!--        href="{% url 'new' %}">Создать Новый Вопрос</a></button>-->
-<!--      <button type="button" href="{% url 'index' %}" class="btn btn-secondary">Мощные вопросы</button>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  {% if messages %}-->
-<!--  <ul>-->
-<!--    {% for message in messages %}-->
-<!--      <li class="{{ message.tags }} btn btn-outline-info ml-2">{{ message }}</li>-->
-<!--    {% endfor %}-->
-<!--  </ul>-->
-<!--{% endif %}-->
-
-<!--  <div class="container main-content">-->
-
-<!--      {% for quest in questions %}-->
-<!--      &lt;!&ndash;{%if quest.published %}&ndash;&gt;-->
-
-<!--    <div class="row">-->
-<!--      <div class="col-10">-->
-<!--        <div class="question">-->
-<!--          <div class="row">-->
-<!--            <div class="col-2">-->
-<!--              <img class="avatar" src="{% static "public/kitten.jpg" %}" width="120" height="110" alt="kitten">-->
-<!--              <div class="margine">-->
-
-<!--              <button type="button" href="{% url 'index' %}" class="btn btn-outline-primary">-->
-<!--                {{ quest.author }}-->
-<!--            </button>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="col-1"></div>-->
-<!--            <div class="col-9">-->
-<!--              <h2><a href="{% url 'question' pk=quest.pk %}">{{ quest.question }} </a></h2> &lt;!&ndash;/question/{{quest.pk}}&ndash;&gt;-->
-<!--              <p>-->
-<!--                <a>{{ quest.description }}</a>-->
-<!--              </p>-->
-<!--              <p><div class="pagination">-->
-
-<!--                {% for tag in quest.tags.all %}-->
-<!--                  <a href='#'>{{ tag.tag }}</a>-->
-<!--                {% endfor %}-->
-<!--                {% for x in quest.answers %}-->
-<!--                    {{x.answer}}-->
-<!--                {% endfor %}-->
-
-<!--                </div></p>-->
-<!--                <p>{{ quest.creation_time }}</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="col-2 ">-->
-<!--          <br />-->
-<!--          <div class="marginal">-->
-<!--          <button type="button" class="btn btn-outline-primary">-->
-<!--              Ответы <span class="badge badge-light">{{quest.answers_set.count}}</span>-->
-<!--          </button>-->
-<!--        </div>-->
-<!--        <div class="marginal">-->
-<!--          <div class="btn-group" role="group" aria-label="Basic example">-->
-<!--              <button type="button" class="btn btn-success"><strong> + </strong></button>-->
-<!--              <button type="button" class="btn btn-danger"><strong> - </strong></button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--            <div class="marginal">-->
-<!--          <button type="button" class="btn btn-outline-danger">-->
-<!--              Рейтинг <span class="badge badge-light">{{ quest.rating }}</span>-->
-<!--          </button>-->
-<!--        </div>-->
-<!--        <button type="button" class="btn btn-outline-primary">-->
-<!--            Просмотры <span class="badge badge-light">{{quest.views}}</span>-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--   &lt;!&ndash; {% endif %}&ndash;&gt;-->
-<!--    {% endfor %}-->
-
-
-<!--  </div>-->
-
-
-
-
 <div class="b">
     <div id="myCarousel" class="carousel slide jumbotronCoffee" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -154,6 +66,9 @@
 
 
     <div class="container marketing">
+                {% if ok %}
+                <button type="button" class="btn btn-outline-info">Мы свяжемся с Вами в ближайшее время!</button><p></p>
+        {% endif %}
             <p></p>
                 <div class="row featurette">
             <div class="col-md-5">
@@ -224,16 +139,19 @@
 
 <footer class="container">
         <div class="jumbotronMy2" style="color: black">
-            <form>
-                <label for="exampleFormControlInput1">Форма обратной связи</label>
+            <form action="{{ request.path }}" method="post">
+                {% csrf_token %}
+                <label>Форма обратной связи</label>
                 <p></p>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label>Ваш Email</label>
+                    {{ Mform.email }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">-->
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Номер (не обязательно)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">
+                    <label>Ваш Номер (не обязательно)</label>
+                    {{ Mform.number }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">-->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Какие услуги Вас интересуют?</label>
@@ -243,15 +161,16 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Кратко опишите проблему</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label>Кратко опишите проблему</label>
+                    {{ Mform.problem }}
+<!--                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
                 </div>
+                <button type="submit" class="btn btn-coffee">Оставить заявку</button>
             </form>
-            <button type="button" class="btn btn-coffee">Оставить заявку</button>
+
         </div>
         <p class="float-right" style="color: black">ИП Коломиец Ю.С. ОГРНИП: 320911200017136, ИНН: 911113069567</a></p>
-        <p style="color: black">&copy; 2020 K Company, Inc.</p>
-    </footer>
+        <p style="color: black">&copy; 2020 K Company </p></footer>
 
 
 

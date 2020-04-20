@@ -6,18 +6,14 @@
 
 <main role="main">
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
     <div class="jumbotronMy urists2">
-
-
 
 
     <div class="container marketing">
 
-
+        {% if ok %}
+                <button type="button" class="btn btn-outline-info">Мы свяжемся с Вами в ближайшее время!</button><p></p>
+        {% endif %}
 
 
         <hr class="featurette-divider">
@@ -61,18 +57,21 @@
     </div> <!-- jumbotron -->
 
 
-    <footer class="container">
+<footer class="container">
         <div class="jumbotronMy2" style="color: black">
-            <form>
-                <label for="exampleFormControlInput1">Форма обратной связи</label>
+            <form action="{{ request.path }}" method="post">
+                {% csrf_token %}
+                <label>Форма обратной связи</label>
                 <p></p>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label>Ваш Email</label>
+                    {{ Mform.email }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">-->
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Номер (не обязательно)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">
+                    <label>Ваш Номер (не обязательно)</label>
+                    {{ Mform.number }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">-->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Какие услуги Вас интересуют?</label>
@@ -82,15 +81,16 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Кратко опишите проблему</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label>Кратко опишите проблему</label>
+                    {{ Mform.problem }}
+<!--                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
                 </div>
+                <button type="submit" class="btn btn-coffee">Оставить заявку</button>
             </form>
-            <button type="button" class="btn btn-coffee">Оставить заявку</button>
+
         </div>
-<p class="float-right" style="color: black">ИП Коломиец Ю.С. ОГРНИП: 320911200017136, ИНН: 911113069567</a></p>
-<p style="color: black">&copy; 2020 K Company </p>
-    </footer>
+        <p class="float-right" style="color: black">ИП Коломиец Ю.С. ОГРНИП: 320911200017136, ИНН: 911113069567</a></p>
+        <p style="color: black">&copy; 2020 K Company </p></footer>
     </div>
 </main>
 

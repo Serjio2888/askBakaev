@@ -11,60 +11,11 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
     <div class="jumbotronMy urists2">
 
-
-
-
     <div class="container marketing">
 
-       <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-
-
-                            <div class="jumbotronDown jumbotron-fluid">
-                                <div class="container">
-                                    <h1 class="display-6">Юристы - топ</h1>
-                                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                                </div>
-                            </div>
-
-                </div>
-                <div class="carousel-item">
-
-                    <div class="jumbotronDown jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-6">Уважение к юристам</h1>
-                            <p class="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-
-                    <div class="jumbotronDown jumbotron-fluid">
-                        <div class="container">
-                            <h1 class="display-6">Вот они слева направо</h1>
-                            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div> -->
-         <!-- <img class="d-block w-100" src="https://avatars.mds.yandex.net/get-pdb/1365646/3e6fb1e8-5da8-4365-a75d-2ce3f3ed0043/s1200" alt="Third slide"> -->
-
-
+        {% if ok %}
+                <button type="button" class="btn btn-outline-info">Мы свяжемся с Вами в ближайшее время!</button><p></p>
+        {% endif %}
 
         <!-- /END THE FEATURETTES -->
         <p></p>
@@ -163,16 +114,19 @@
 
 <footer class="container">
         <div class="jumbotronMy2" style="color: black">
-            <form>
-                <label for="exampleFormControlInput1">Форма обратной связи</label>
+            <form action="{{ request.path }}" method="post">
+                {% csrf_token %}
+                <label>Форма обратной связи</label>
                 <p></p>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label>Ваш Email</label>
+                    {{ Mform.email }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">-->
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Ваш Номер (не обязательно)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">
+                    <label>Ваш Номер (не обязательно)</label>
+                    {{ Mform.number }}
+<!--                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="+79991234567">-->
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Какие услуги Вас интересуют?</label>
@@ -182,11 +136,13 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Кратко опишите проблему</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label>Кратко опишите проблему</label>
+                    {{ Mform.problem }}
+<!--                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
                 </div>
+                <button type="submit" class="btn btn-coffee">Оставить заявку</button>
             </form>
-            <button type="button" class="btn btn-coffee">Оставить заявку</button>
+
         </div>
         <p class="float-right" style="color: black">ИП Коломиец Ю.С. ОГРНИП: 320911200017136, ИНН: 911113069567</a></p>
         <p style="color: black">&copy; 2020 K Company </p></footer>
